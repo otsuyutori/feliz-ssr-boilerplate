@@ -5,7 +5,7 @@ isProduction = process.env.NODE_ENV && process.env.NODE_ENV === 'Production';
 console.log('Bundling for ' + (isProduction ? 'production' : 'development') + '...');
 
 var CONFIG = {
-    fsharpEntry: isProduction ? "./.fable/Client.js" : "./src/Client/.fable/Client.js",
+    fsharpEntry: isProduction ? "./.fable/HSCode.js" : "./src/Client/.fable/HSCode.js",
     outputDir: isProduction ? './wwwroot' : './src/Client/public',
     devServerProxy: {
         '/api/*': {
@@ -13,7 +13,7 @@ var CONFIG = {
         }
     },
     babel: {
-        presets: ["@babel/preset-env"]
+        presets: ["@babel/preset-env", "@babel/preset-react"]
     }
 }
 

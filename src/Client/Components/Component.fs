@@ -1,13 +1,8 @@
-module Client.Component
+module Client.HSCode.Component
 
 open Feliz
 
 type Components =
-    /// <summary>
-    /// Hello World
-    /// </summary>
-    [<ReactComponent>]
-    static member HelloWorld() = Html.h1 "Hello World"
 
     /// <summary>
     /// Counter
@@ -22,3 +17,9 @@ type Components =
                 prop.text "Increment"
             ]
         ]
+
+    /// <summary>
+    /// Import External Component
+    /// </summary>
+    [<ReactComponent(import = "MyReactYouTube", from = "../Components/youtube.jsx")>]
+    static member MyReactYouTube(videoId: string) = React.imported ()

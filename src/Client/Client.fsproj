@@ -8,11 +8,13 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Feliz" Version="1.68.0" />
+    <PackageReference Include="Feliz.Router" Version="3.10.0" />
     <PackageReference Include="Thoth.Json" Version="9.0.0" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Component.fs" />
-    <Compile Include="Client.fs" />
+    <Compile Include=".\Components\Component.fs" />
+    <Compile Include="Router.fs" />
+    <Compile Include="Index.fs" />
   </ItemGroup>
   <Import Project="..\..\.paket\Paket.Restore.targets" />
 </Project>

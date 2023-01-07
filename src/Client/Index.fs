@@ -1,13 +1,12 @@
 module Client
 
 open Feliz
+open Feliz.Router
 open Fable.Core.JsInterop
 open Thoth.Json
-open Client.Component
 open Shared.Types
 
 open Browser
-
 
 let init () =
   let model =
@@ -21,6 +20,6 @@ let init () =
 let model = init()
 
 ReactDOM.render(
-    Components.Counter(model.counter.Value),
+    Client.HSCode.Router(),
     document.getElementById "feliz-app"
 )

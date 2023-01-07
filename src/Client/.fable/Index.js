@@ -23,4 +23,4 @@ export const model = init();
 
 render(createElement(Router, null), document.getElementById("feliz-app"));
 
-//# sourceMappingURL=Client.js.map
+//# sourceMappingURL=Index.js.map

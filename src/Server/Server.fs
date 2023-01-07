@@ -16,6 +16,8 @@ open Feliz.ViewEngine
 
 open Microsoft.AspNetCore.Http
 
+open Server.Template
+
 type Env =
     | Development
     | Production
@@ -49,31 +51,37 @@ let initState: Model = {
 }
 let getInitCounter () : Task<Model> = task { return initState }
 
-let felizTemplate =
+let felizTemplate(content : ReactElement) =
   Html.html [
     Html.head
       [
       Html.link
         [
           prop.rel "stylesheet"
-          prop.href "https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css"
+          prop.href "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
         ]
       Html.link
         [
           prop.rel "stylesheet"
           prop.href (baseUrl + "/index.css")
         ]
+      Html.script
+        [
+          prop.src "https://kit.fontawesome.com/3c414f9498.js"
+        ]
       ]
     Html.body
       [
+        NavBar.NavBar baseUrl
+        content
         Html.div
           [
             prop.id "feliz-app"
           ]
         Html.script
           [ prop.text """var __INIT_STATE__ = __init_state__""" ]
-        Html.script [ prop.src (baseUrl + "/vendors.js") ]
         Html.script [ prop.src (baseUrl + "/app.js") ]
+        Html.script [ prop.src (baseUrl + "/vendors.js") ]
       ]
   ]
 
@@ -90,7 +98,7 @@ let felizView reactHtml =
 
 
 let defaultView' = router {
-    get "/" (setHttpHeader "Cache-Control" "no-cache"  >=> felizView felizTemplate)
+    get "/" (setHttpHeader "Cache-Control" "no-cache"  >=> (felizTemplate Content.Content |> felizView))
     get "/index.html" (redirectTo false "/")
     get "/default.html" (redirectTo false "/")
 }

@@ -4,7 +4,7 @@ import { Model_get_Empty, Model$reflection } from "./Shared/Types.js";
 import { some } from "./fable_modules/fable-library.3.7.2/Option.js";
 import { render } from "react-dom";
 import { createElement } from "react";
-import { Router } from "./Router.js";
+import { Router } from "./HSCode/Router.js";
 
 export function init() {
     let matchValue;
@@ -23,4 +23,4 @@ export const model = init();
 
 render(createElement(Router, null), document.getElementById("feliz-app"));
 
-//# sourceMappingURL=Client.js.map
+//# sourceMappingURL=HSCode.js.map
