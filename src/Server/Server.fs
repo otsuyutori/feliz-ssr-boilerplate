@@ -48,6 +48,7 @@ let baseUrl = "http://localhost:8080"
 
 let initState: Model = {
   counter = Some 42
+  videoId = Some "ujLBD9pFPtY"
 }
 let getInitCounter () : Task<Model> = task { return initState }
 

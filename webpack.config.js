@@ -5,7 +5,7 @@ isProduction = process.env.NODE_ENV && process.env.NODE_ENV === 'Production';
 console.log('Bundling for ' + (isProduction ? 'production' : 'development') + '...');
 
 var CONFIG = {
-    fsharpEntry: isProduction ? "./.fable/HSCode.js" : "./src/Client/.fable/HSCode.js",
+    fsharpEntry: isProduction ? "./.fable/Index.js" : "./src/Client/.fable/Index.js",
     outputDir: isProduction ? './wwwroot' : './src/Client/public',
     devServerProxy: {
         '/api/*': {

@@ -1,18 +1,19 @@
-module Client.HSCode
+module Client.Router
 
 open Feliz
 open Feliz.Router
-open Client.HSCode.Component
+open Client.Video
+open Shared.Types
 
 [<ReactComponent>]
-let Router() =
+let Router(model : Model) =
     let (currentUrl, updateUrl) = React.useState(Router.currentUrl())
     React.router [
         router.onUrlChanged updateUrl
         router.children [
             match currentUrl with
             | [ ] -> Html.h1 "Index"
-            | ["youtube"] -> Components.MyReactYouTube("ujLBD9pFPtY")
+            | ["youtube"] -> Video(model.counter.Value ,model.videoId.Value)
             | otherwise -> Html.h1 "Not found"
         ]
     ]

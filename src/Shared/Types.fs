@@ -5,6 +5,10 @@ type Counter = int
 type Model =
     {
       counter: Counter option
+      videoId: string option
     }
     static member Empty =
-        { counter = None }
+        { 
+          counter = None
+          videoId = None
+         }

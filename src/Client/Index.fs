@@ -20,6 +20,6 @@ let init () =
 let model = init()
 
 ReactDOM.render(
-    Client.HSCode.Router(),
+    Client.Router.Router(model),
     document.getElementById "feliz-app"
 )

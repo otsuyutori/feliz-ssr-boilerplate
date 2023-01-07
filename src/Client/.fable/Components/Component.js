@@ -10,7 +10,7 @@ export class Components {
 }
 
 export function Components$reflection() {
-    return class_type("Client.HSCode.Component.Components", void 0, Components);
+    return class_type("Client.Component.Components", void 0, Components);
 }
 
 export function Components_Counter_Z524259A4(components_Counter_Z524259A4InputProps) {

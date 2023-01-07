@@ -21,6 +21,6 @@ export function init() {
 
 export const model = init();
 
-render(createElement(Router, null), document.getElementById("feliz-app"));
+render(createElement(Router, model), document.getElementById("feliz-app"));
 
 //# sourceMappingURL=Index.js.map
