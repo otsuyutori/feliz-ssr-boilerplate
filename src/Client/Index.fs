@@ -1,7 +1,6 @@
 module Client
 
 open Feliz
-open Feliz.Router
 open Fable.Core.JsInterop
 open Thoth.Json
 open Shared.Types
