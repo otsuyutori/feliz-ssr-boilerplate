@@ -1,4 +1,5 @@
 .fable/*
+src/Client/.fable/*
 *.fs.js
 *.fs.js.map
 .fake/
